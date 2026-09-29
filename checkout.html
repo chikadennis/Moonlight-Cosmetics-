@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Review your cart and complete your Moonlight Cosmetics order via WhatsApp.">
+  <title>Checkout | Moonlight Cosmetics</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ SHARED HEADER: keep identical across all pages (only the active link differs) ============ -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">☾</span>
+        <span class="brand-text">Moonlight Cosmetics<small>From Nature To Your Skin</small></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="checkout.html" class="icon-btn cart-link active" aria-label="View cart">
+          🛍️<span class="cart-badge hide" id="cartBadge">0</span>
+        </a>
+        <a href="products.html" class="btn btn-gold btn-sm shop-now-btn">Shop Now</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+  <!-- ============ END SHARED HEADER ============ -->
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Checkout</div>
+        <h1>Your Cart &amp; Checkout</h1>
+        <p>Review your order, add your delivery details, then send it to us on WhatsApp to confirm.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container checkout-grid">
+
+        <div>
+          <div class="cart-box reveal" id="cartBox"></div>
+
+          <div class="checkout-form-box reveal" id="checkoutFormSection">
+            <div class="contact-card">
+              <h3 style="margin-bottom:16px;">Delivery Details</h3>
+              <form id="checkoutForm">
+                <div>
+                  <label for="checkoutName">Your Name</label>
+                  <input id="checkoutName" type="text" placeholder="Enter your full name" required>
+                </div>
+                <div>
+                  <label for="checkoutPhone">Phone Number</label>
+                  <input id="checkoutPhone" type="tel" placeholder="e.g. 0801 234 5678" required>
+                </div>
+                <div>
+                  <label for="checkoutAddress">Delivery Address</label>
+                  <textarea id="checkoutAddress" placeholder="Street, area, city" required></textarea>
+                </div>
+                <div>
+                  <label for="checkoutNotes">Notes (optional)</label>
+                  <textarea id="checkoutNotes" placeholder="Delivery time preference, gift note, etc."></textarea>
+                </div>
+
+                <div class="assurance">
+                  <span>🔒</span>
+                  <div><strong>Secure &amp; direct.</strong> Your order is sent directly and privately to us via WhatsApp — no card details are ever collected on this site.</div>
+                </div>
+
+                <button class="btn btn-primary btn-block" type="submit">Send Order on WhatsApp</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-summary reveal" id="orderSummary">
+          <h3 style="margin-bottom:16px;">Order Summary</h3>
+          <div class="summary-row">
+            <span>Items</span>
+            <span id="summaryCount">0</span>
+          </div>
+          <div class="summary-row">
+            <span>Delivery</span>
+            <span>Arranged via WhatsApp</span>
+          </div>
+          <div class="summary-total">
+            <span>Total</span>
+            <span id="summaryTotal">₦0</span>
+          </div>
+          <p class="hero-text" style="font-size:.85rem; margin-top:14px;">
+            Final delivery cost and timing are confirmed with you personally on WhatsApp after checkout.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ SHARED FOOTER: keep identical across all pages ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <strong>🌙 Moonlight Cosmetics</strong>
+          <p>From nature to your skin. Natural skincare and beauty services, handcrafted with care.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <a href="tel:+2347047388912">📞 07047388912</a>
+          <a href="mailto:chikadennis21@gmail.com">📧 chikadennis21@gmail.com</a>
+          <a href="https://wa.me/2347047388912" target="_blank">💬 Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Moonlight Cosmetics. All rights reserved. 🌙🌿
+      </div>
+    </div>
+  </footer>
+  <!-- ============ END SHARED FOOTER ============ -->
+
+  <a class="whatsapp" href="https://wa.me/2347047388912" target="_blank" aria-label="Chat with Moonlight Cosmetics on WhatsApp">
+    💬 WhatsApp
+  </a>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

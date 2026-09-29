@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Moonlight Cosmetics - a natural skincare and beauty brand. From nature to your skin.">
+  <title>About Us | Moonlight Cosmetics</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ SHARED HEADER: keep identical across all pages (only the active link differs) ============ -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">☾</span>
+        <span class="brand-text">Moonlight Cosmetics<small>From Nature To Your Skin</small></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="checkout.html" class="icon-btn cart-link" aria-label="View cart">
+          🛍️<span class="cart-badge hide" id="cartBadge">0</span>
+        </a>
+        <a href="products.html" class="btn btn-gold btn-sm shop-now-btn">Shop Now</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+  <!-- ============ END SHARED HEADER ============ -->
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
+        <h1>Welcome to Moonlight Cosmetics 🌙</h1>
+        <p>A beauty and skincare brand focused on natural products and personal-care services.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container about-grid">
+        <div class="reveal">
+          <span class="eyebrow">Our Story</span>
+          <h2>From nature, to your skin.</h2>
+          <p>
+            Moonlight Cosmetics is a beauty and skincare brand focused on
+            providing natural skincare products and personal-care services.
+          </p>
+          <p>
+            We believe beauty should feel simple, caring and enjoyable.
+            Every product is made in small batches, so we can stay close
+            to the quality and care that goes into it.
+          </p>
+          <h3>"From nature to your skin." 🌿</h3>
+        </div>
+
+        <div class="about-box tilt-card reveal">
+          <h3>Why Choose Moonlight Cosmetics?</h3>
+          <p>🌿 Nature-inspired beauty care</p>
+          <p>✨ Skincare and body-care products</p>
+          <p>💆🏽‍♀️ Beauty services</p>
+          <p>🏠 Home services available</p>
+          <p>💗 Customer-focused care</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="how-we-work reveal">
+          <div class="section-heading" style="margin-bottom:0;">
+            <span class="eyebrow">How We Work</span>
+            <h2>Ordering is simple and personal.</h2>
+            <p>No bots, no middlemen — you'll always speak directly with us.</p>
+          </div>
+
+          <div class="how-we-work-grid">
+            <div class="how-step">
+              <div class="how-num">1</div>
+              <h4>Choose your products</h4>
+              <p>Browse our products or services and add what you'd like to your cart.</p>
+            </div>
+            <div class="how-step">
+              <div class="how-num">2</div>
+              <h4>Review at checkout</h4>
+              <p>Check your order, add your delivery details, and confirm everything looks right.</p>
+            </div>
+            <div class="how-step">
+              <div class="how-num">3</div>
+              <h4>Confirm on WhatsApp</h4>
+              <p>Your order is sent straight to us on WhatsApp, where we confirm details and delivery with you personally.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ SHARED FOOTER: keep identical across all pages ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <strong>🌙 Moonlight Cosmetics</strong>
+          <p>From nature to your skin. Natural skincare and beauty services, handcrafted with care.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <a href="tel:+2347047388912">📞 07047388912</a>
+          <a href="mailto:chikadennis21@gmail.com">📧 chikadennis21@gmail.com</a>
+          <a href="https://wa.me/2347047388912" target="_blank">💬 Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Moonlight Cosmetics. All rights reserved. 🌙🌿
+      </div>
+    </div>
+  </footer>
+  <!-- ============ END SHARED FOOTER ============ -->
+
+  <a class="whatsapp" href="https://wa.me/2347047388912" target="_blank" aria-label="Chat with Moonlight Cosmetics on WhatsApp">
+    💬 WhatsApp
+  </a>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Moonlight Cosmetics - questions, orders and beauty service enquiries.">
+  <title>Contact Us | Moonlight Cosmetics</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ SHARED HEADER: keep identical across all pages (only the active link differs) ============ -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">☾</span>
+        <span class="brand-text">Moonlight Cosmetics<small>From Nature To Your Skin</small></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="checkout.html" class="icon-btn cart-link" aria-label="View cart">
+          🛍️<span class="cart-badge hide" id="cartBadge">0</span>
+        </a>
+        <a href="products.html" class="btn btn-gold btn-sm shop-now-btn">Shop Now</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+  <!-- ============ END SHARED HEADER ============ -->
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+        <h1>Let's talk about your order.</h1>
+        <p>Have a question, or want to check on a product before ordering? Reach out directly.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container contact-grid">
+
+        <div class="contact-info reveal">
+          <span class="eyebrow">Contact Us</span>
+          <h2>We'd love to hear from you.</h2>
+          <p>
+            For a full order with delivery details, use
+            <a href="checkout.html" style="color:var(--purple); font-weight:800;">Checkout</a>
+            after adding items to your cart. For general questions, use the form here.
+          </p>
+
+          <p><strong>📞 Phone:</strong> <a href="tel:+2347047388912">07047388912</a></p>
+          <p><strong>📧 Email:</strong> <a href="mailto:chikadennis21@gmail.com">chikadennis21@gmail.com</a></p>
+          <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/2347047388912" target="_blank">Chat with Moonlight Cosmetics</a></p>
+
+          <div class="assurance" style="margin-top:22px;">
+            <span>🔒</span>
+            <div><strong>Private &amp; direct.</strong> Messages sent from this form go straight to us on WhatsApp — no card or payment details are ever collected on this site.</div>
+          </div>
+        </div>
+
+        <div class="contact-card tilt-card reveal">
+          <form id="orderForm">
+            <div>
+              <label for="name">Your Name</label>
+              <input id="name" type="text" placeholder="Enter your name" required>
+            </div>
+
+            <div>
+              <label for="product">What are you interested in?</label>
+              <select id="product" required>
+                <option value="">Choose a product/service</option>
+                <option>African Black Soap</option>
+                <option>Body Scrub</option>
+                <option>Face Serum</option>
+                <option>Face Soap</option>
+                <option>Body Oil</option>
+                <option>Body Wax</option>
+                <option>Full Body Wash</option>
+                <option>Small Set</option>
+                <option>Big Set</option>
+                <option>Home Service</option>
+                <option>General Question</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Tell us what you'd like to know or order..."></textarea>
+            </div>
+
+            <button class="btn btn-primary btn-block" type="submit">Send on WhatsApp</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ SHARED FOOTER: keep identical across all pages ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <strong>🌙 Moonlight Cosmetics</strong>
+          <p>From nature to your skin. Natural skincare and beauty services, handcrafted with care.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <a href="tel:+2347047388912">📞 07047388912</a>
+          <a href="mailto:chikadennis21@gmail.com">📧 chikadennis21@gmail.com</a>
+          <a href="https://wa.me/2347047388912" target="_blank">💬 Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> Moonlight Cosmetics. All rights reserved. 🌙🌿
+      </div>
+    </div>
+  </footer>
+  <!-- ============ END SHARED FOOTER ============ -->
+
+  <a class="whatsapp" href="https://wa.me/2347047388912" target="_blank" aria-label="Chat with Moonlight Cosmetics on WhatsApp">
+    💬 WhatsApp
+  </a>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var orderForm = document.getElementById("orderForm");
+      if (!orderForm) return;
+
+      orderForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value.trim();
+        var product = document.getElementById("product").value;
+        var message = document.getElementById("message").value.trim();
+
+        var whatsappMessage =
+          "Hello Moonlight Cosmetics!\n\n" +
+          "My name is " + name + ".\n" +
+          "I am interested in: " + product + ".\n" +
+          "Message: " + (message || "I would like to know more.") +
+          "\n\nThank you.";
+
+        var whatsappURL = "https://wa.me/2347047388912?text=" + encodeURIComponent(whatsappMessage);
+        window.open(whatsappURL, "_blank");
+
+        if (typeof showToast === "function") {
+          showToast("Message ready — continue on WhatsApp to send it.");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
