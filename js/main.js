@@ -148,4 +148,35 @@
     }, { passive: true });
   }
 
+  // ---------- AUTOPLAY RELIABILITY (mobile Safari / low-power mode) ----------
+  // Muted autoplay is usually allowed, but some mobile browsers (iOS Low Power
+  // Mode in particular) still block it silently. Explicitly request play() and,
+  // if blocked, retry on the first real user interaction (a user gesture always
+  // satisfies autoplay policies).
+  var autoplayVideos = document.querySelectorAll("video[autoplay]");
+
+  if (autoplayVideos.length) {
+    var tryPlay = function (video) {
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(function () {
+          var retry = function () {
+            video.play().catch(function () {});
+          };
+          ["touchstart", "click", "scroll"].forEach(function (evt) {
+            document.addEventListener(evt, retry, { once: true, passive: true });
+          });
+        });
+      }
+    };
+
+    autoplayVideos.forEach(function (video) {
+      if (video.readyState >= 2) {
+        tryPlay(video);
+      } else {
+        video.addEventListener("loadeddata", function () { tryPlay(video); }, { once: true });
+      }
+    });
+  }
+
 })();

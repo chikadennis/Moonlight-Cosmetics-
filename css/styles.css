@@ -1582,6 +1582,22 @@ footer a:hover {
     align-items: stretch;
   }
 
+  .hero-product-figure {
+    order: 0;
+  }
+
+  .hero-product-figure img {
+    max-width: 190px;
+  }
+
+  .hero-grid {
+    gap: 28px;
+  }
+
+  .product-media {
+    height: 170px;
+  }
+
   .shop-now-btn {
     display: none;
   }
